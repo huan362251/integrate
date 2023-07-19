@@ -1,0 +1,37 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.56.10:3306/test?serverTimezone=UTC&useSSL=false&characterEncoding=utf-8
+    username: root
+    password: root
+  redis:
+    host: 192.168.56.10
+    port: 6379
+    thymeleaf:
+      cache: false
+  rabbitmq:
+    host: 192.168.56.10
+    port: 5672
+    virtual-host: /
+    listener:
+      simple:
+        acknowledge-mode: manual
+  messages:
+    basename: message
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+
+demo:
+  user:
+    id: abc
+file:
+  thread:
+    coreSize: 5
+    maxSize: 50
+    keepAliveTime: 30

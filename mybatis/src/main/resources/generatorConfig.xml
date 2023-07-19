@@ -1,0 +1,43 @@
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <properties resource="generator/config.properties"/>
+
+    <context id="Mysql" targetRuntime="MyBatis3" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <property name="caseSensitive" value="true"/>
+            <!--使用lombok生成get和set-->
+            <property name="lombok" value="Getter,Setter,ToString,Accessors"/>
+        </plugin>
+
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.user}"
+                        password="${jdbc.password}">
+            <!--与数据库自带同名表区分-->
+            <property name="nullCatalogMeansCurrent" value="true" ></property>
+        </jdbcConnection>
+
+        <!--实体类-->
+        <javaModelGenerator targetPackage="com.dh.marketplatform.user.domain.vo.dto.${modelName}" targetProject="src/main/java">
+            <property name="enableSubPackages"></property>
+
+        </javaModelGenerator>
+        <!--mapper.xml-->
+        <sqlMapGenerator targetPackage="mapping/${modelName}"
+                         targetProject="src/main/resources"/>
+        <!--mapper接口-->
+        <javaClientGenerator targetPackage="com.dh.marketplatform.user.domain.mapper.${modelName}"
+                             targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+        <!--为哪张表生成-->
+        <table tableName="${tableName}">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+    </context>
+</generatorConfiguration>

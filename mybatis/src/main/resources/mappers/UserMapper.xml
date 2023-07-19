@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bawangbai.mybatis.mapper.UserMapper">
+
+    <insert id="insertUser">
+        insert into t_user values(null ,'zhangsan','123',12,'男','123@qq.com')
+    </insert>
+
+    <update id="updateUser">
+        update t_user set username = 'lisi' where id = 2
+    </update>
+
+    <delete id="deleteUser">
+        delete from t_user where id = 3
+    </delete>
+
+    <select id="queryById" resultType="User">
+        select * from t_user where id = 4
+    </select>
+
+    <select id="queryAllUser" resultType="User">
+        select * from t_user
+    </select>
+
+    <select id="queryByIds" resultType="User">
+        select * from t_user where id = #{id}
+    </select>
+
+    <select id="queryResultMap" resultType="Map">
+        select * from t_user;
+    </select>
+
+    <select id="queryLikeName" resultType="User">
+        <!--select * from t_user  where username like '%'||#{username}||'%'-->
+        <!--select * from t_user  where username like concat('%',#{username},'%')-->
+        <!--select * from t_user  where username like '%${username}%'-->
+        select * from t_user  where username like "%"#{username}"%"
+    </select>
+
+    <insert id="" useGeneratedKeys="" keyProperty="">
+        insert into t_user
+        <foreach collection="" item="" open="" separator="" close="">
+
+        </foreach>
+    </insert>
+</mapper>

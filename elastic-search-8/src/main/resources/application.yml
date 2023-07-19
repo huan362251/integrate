@@ -1,0 +1,21 @@
+server:
+  port: 9004
+#elasticsearch:
+#  host: 192.168.56.10
+#  port: 9200
+logging:
+  level:
+    com.bawangbai.elastic.search: info
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    url: jdbc:mysql://192.168.56.101:3306/mybatis_plus?characterEncoding=utf-8&useSSL=false
+    #    username: root
+    #    password: root
+    url: jdbc:mysql://192.168.200.112:3306/v3testdb_stl?useSSL=false&characterEncoding=utf8
+    username: pacypaytest
+    password: jf23KEa1=jvnFeXQ

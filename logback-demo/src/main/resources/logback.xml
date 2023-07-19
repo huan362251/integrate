@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <contextName>logback</contextName>
+
+    <property name="log.path" value="F:\\logback.log" />
+    <property name="pattern" value="[%10level] %date %c %M %L [%thread] %msg%n"/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- <filter class="com.example.logback.filter.MyFilter" /> -->
+<!--        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+<!--            <level>ERROR</level>-->
+<!--        </filter>-->
+        <encoder>
+            <pattern>${pattern}</pattern>
+        </encoder>
+    </appender>
+
+<!--    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        <file>${log.path}</file>-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--            <fileNamePattern>${log.path}.%d{yyyy-MM-dd}.zip</fileNamePattern>-->
+<!--        </rollingPolicy>-->
+<!--        <encoder>-->
+<!--            <pattern>${pattern}</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+    <root level="All">
+        <appender-ref ref="console" />
+<!--        <appender-ref ref="file" />-->
+    </root>
+
+<!--    <logger name="com.example.logback" level="warn" />-->
+
+</configuration>

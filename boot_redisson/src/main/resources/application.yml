@@ -1,0 +1,17 @@
+server:
+  port: 8091
+
+spring:
+  profiles:
+    active: prod
+
+reidsson:
+  sentinelAddresses: redis://10.42.33.43:26379
+#  sentinelAddresses: redis://redis-node-0.redis-headless.support:26379,redis://redis-node-0.redis-headless.support:26380,redis://redis-node-0.redis-headless.support:26381
+#  sentinelAddresses: "redis://192.168.56.104:26379, redis://192.168.56.104:26379, redis://redis-node-2.redis-headless.support:26379"
+  masterName: "mymaster"
+  database: 0
+  singleAddress: "redis://192.168.56.104:6379"
+  password: 123456
+  enable: true
+

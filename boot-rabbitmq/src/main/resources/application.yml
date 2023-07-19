@@ -1,0 +1,11 @@
+# 应用名称
+server:
+  port: 9001
+spring:
+  rabbitmq:
+    addresses: 192.168.56.101:5672,192.168.56.101:5673,192.168.56.101:5674
+    username: admin
+    password: 123456
+
+#    host: 192.168.56.101
+#    port: 5673

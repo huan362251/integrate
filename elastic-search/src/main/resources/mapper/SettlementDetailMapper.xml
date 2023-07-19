@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bawangbai.elastic.search.mapper.SettlementDetailMapper">
+
+    <resultMap id="BaseResultMap" type="com.bawangbai.elastic.search.pojo.entity.SettlementDetail">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="settleBatchNo" column="settle_batch_no" jdbcType="BIGINT"/>
+            <result property="settleDate" column="settle_date" jdbcType="DATE"/>
+            <result property="settleStatus" column="settle_status" jdbcType="VARCHAR"/>
+            <result property="requestId" column="request_id" jdbcType="BIGINT"/>
+            <result property="acntTxnType" column="acnt_txn_type" jdbcType="VARCHAR"/>
+            <result property="acntId" column="acnt_id" jdbcType="BIGINT"/>
+            <result property="acntType" column="acnt_type" jdbcType="VARCHAR"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="userType" column="user_type" jdbcType="VARCHAR"/>
+            <result property="orgId" column="org_id" jdbcType="BIGINT"/>
+            <result property="productType" column="product_type" jdbcType="VARCHAR"/>
+            <result property="subProductType" column="sub_product_type" jdbcType="VARCHAR"/>
+            <result property="appId" column="app_id" jdbcType="BIGINT"/>
+            <result property="txnType" column="txn_type" jdbcType="VARCHAR"/>
+            <result property="txnStatus" column="txn_status" jdbcType="VARCHAR"/>
+            <result property="txnAmount" column="txn_amount" jdbcType="DECIMAL"/>
+            <result property="txnWebsite" column="txn_website" jdbcType="VARCHAR"/>
+            <result property="interchangeAmount" column="interchange_amount" jdbcType="DECIMAL"/>
+            <result property="schemeAmount" column="scheme_amount" jdbcType="DECIMAL"/>
+            <result property="markupAmount" column="markup_amount" jdbcType="DECIMAL"/>
+            <result property="handlingAmount" column="handling_amount" jdbcType="DECIMAL"/>
+            <result property="feeAmount" column="fee_amount" jdbcType="DECIMAL"/>
+            <result property="depositAmount" column="deposit_amount" jdbcType="DECIMAL"/>
+            <result property="sumAmount" column="sum_amount" jdbcType="DECIMAL"/>
+            <result property="settleCurrency" column="settle_currency" jdbcType="VARCHAR"/>
+            <result property="txnTime" column="txn_time" jdbcType="TIMESTAMP"/>
+            <result property="feeBatchNo" column="fee_batch_no" jdbcType="BIGINT"/>
+            <result property="feeStatus" column="fee_status" jdbcType="VARCHAR"/>
+            <result property="depositStatus" column="deposit_status" jdbcType="VARCHAR"/>
+            <result property="depositBatchNo" column="deposit_batch_no" jdbcType="BIGINT"/>
+            <result property="orderAmount" column="order_amount" jdbcType="DECIMAL"/>
+            <result property="orderCurrency" column="order_currency" jdbcType="VARCHAR"/>
+            <result property="orderTime" column="order_time" jdbcType="TIMESTAMP"/>
+            <result property="cardBin" column="card_bin" jdbcType="VARCHAR"/>
+            <result property="cardBinCountry" column="card_bin_country" jdbcType="VARCHAR"/>
+            <result property="cardType" column="card_type" jdbcType="VARCHAR"/>
+            <result property="direction" column="direction" jdbcType="VARCHAR"/>
+            <result property="platform" column="platform" jdbcType="VARCHAR"/>
+            <result property="serviceId" column="service_id" jdbcType="BIGINT"/>
+            <result property="txnId" column="txn_id" jdbcType="BIGINT"/>
+            <result property="serviceType" column="service_type" jdbcType="VARCHAR"/>
+            <result property="externalOrderId" column="external_order_id" jdbcType="VARCHAR"/>
+            <result property="externalOrderTime" column="external_order_time" jdbcType="VARCHAR"/>
+            <result property="externalOrderTimeZone" column="external_order_time_zone" jdbcType="VARCHAR"/>
+            <result property="systemSource" column="system_source" jdbcType="VARCHAR"/>
+            <result property="createOpr" column="create_opr" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateOpr" column="update_opr" jdbcType="VARCHAR"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="taxes" column="taxes" jdbcType="DECIMAL"/>
+            <result property="taxesType" column="taxes_type" jdbcType="VARCHAR"/>
+            <result property="channelCurrency" column="channel_currency" jdbcType="VARCHAR"/>
+            <result property="taxesStatus" column="taxes_status" jdbcType="VARCHAR"/>
+            <result property="expand" column="expand" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,settle_batch_no,settle_date,
+        settle_status,request_id,acnt_txn_type,
+        acnt_id,acnt_type,user_id,
+        user_type,org_id,product_type,
+        sub_product_type,app_id,txn_type,
+        txn_status,txn_amount,txn_website,
+        interchange_amount,scheme_amount,markup_amount,
+        handling_amount,fee_amount,deposit_amount,
+        sum_amount,settle_currency,txn_time,
+        fee_batch_no,fee_status,deposit_status,
+        deposit_batch_no,order_amount,order_currency,
+        order_time,card_bin,card_bin_country,
+        card_type,direction,platform,
+        service_id,txn_id,service_type,
+        external_order_id,external_order_time,external_order_time_zone,
+        system_source,create_opr,create_time,
+        update_opr,update_time,taxes,
+        taxes_type,channel_currency,taxes_status,
+        expand
+    </sql>
+</mapper>

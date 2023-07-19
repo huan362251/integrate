@@ -1,0 +1,22 @@
+server:
+  port: 9002
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.56.10:3306/mybatis?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+  application:
+    name: apollo-demo
+  profiles:
+    active: dev
+app:
+  id: apollo-demo
+apollo:
+  bootstrap:
+    enabled: true
+    eagerLoad:
+      enabled: true
+    namespaces: application,rabbitmq-config,weifuwu.common-config
+  #  meta: http://192.168.56.108:8080
+  config-service: http://192.168.56.108:8080
